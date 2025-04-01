@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuNova – Intelligent Document Processing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.14.9/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.14.9/dist/cdn.min.js" defer></script>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body class="bg-white text-gray-900" x-data="{ showImprint: false }">
+    <!-- Navigation -->
+    <header class="flex items-center justify-between px-6 py-4 shadow">
+      <div class="flex items-center space-x-2">
+        <img src="logo.svg" alt="DocuNova Logo" class="w-10 h-10" />
+        <span class="text-2xl font-bold text-blue-700">DocuNova</span>
+      </div>
+      <nav class="space-x-6">
+        <a href="#features" class="text-gray-600 hover:text-purple-700">Features</a>
+        <a href="#workflow" class="text-gray-600 hover:text-purple-700">Workflow</a>
+        <a href="#story" class="text-gray-600 hover:text-purple-700">Story</a>
+        <a href="#who" class="text-gray-600 hover:text-purple-700">Who Is It For?</a>
+        <a href="#imprint" class="text-gray-600 hover:text-purple-700" @click.prevent="showImprint = true">Impressum</a>
+        <a href="https://github.com/christianlouis/DocuNova" target="_blank" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800">View on GitHub</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-center py-20 px-6 bg-gradient-to-r from-blue-700 to-purple-700 text-white">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl font-extrabold mb-4">Intelligent Document Processing & Management</h1>
+        <p class="text-xl mb-6">
+          Simplify your document workflow. Organize and centralize your files and effortlessly go paperless.
+        </p>
+        <img src="hero.png" alt="Hero Illustration" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl" />
+      </div>
+    </section>
+
+    <section id="story" class="py-20 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Christian’s Journey</h2>
+      
+          <div class="space-y-24 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 transition-all duration-700" x-data="{}">
+      
+            <div
+              class="bg-gray-50 rounded-xl shadow p-6 text-center opacity-0 transform translate-x-52 transition-all duration-1000 ease-out"
+              x-intersect.once="$el.classList.add('opacity-100', 'translate-x-0')"
+            >
+              <img src="story1.png" alt="Christian scanning documents" class="rounded-lg mb-6 w-full max-w-md mx-auto">
+              <p class="text-base text-gray-700">
+                Christian always believed in staying organized. Long before cloud storage and paperless offices became trendy, he had developed a meticulous routine: every invoice, receipt, and letter was scanned and saved as <code>scan-YYYYMMDDHHMMSS.pdf</code>.
+              </p>
+            </div>
+      
+            <div
+              class="bg-gray-50 rounded-xl shadow p-6 text-center opacity-0 transform -translate-x-52 transition-all duration-1000 ease-out"
+              x-intersect.once="$el.classList.add('opacity-100', 'translate-x-0')"
+            >
+              <img src="story2.png" alt="Overwhelmed Christian" class="rounded-lg mb-6 w-full max-w-md mx-auto">
+              <p class="text-base text-gray-700">
+                But as the years went by, the volume grew. What started as a neat system became a digital jungle. Naming conventions slipped. Folders named “Misc” multiplied. Searching became a nightmare.
+              </p>
+            </div>
+      
+            <div
+              class="bg-gray-50 rounded-xl shadow p-6 text-center opacity-0 transform translate-x-52 transition-all duration-1000 ease-out"
+              x-intersect.once="$el.classList.add('opacity-100', 'translate-x-0')"
+            >
+              <img src="story3.png" alt="Christian buried in documents" class="rounded-lg mb-6 w-full max-w-md mx-auto">
+              <p class="text-base text-gray-700">
+                Eventually, even finding a single document felt like digging through sand. OCR helped a little, but couldn’t understand context. Christian tried to reorganize, but the mess just grew. He wasn’t alone—others shared his pain.
+              </p>
+            </div>
+      
+            <div
+              class="bg-gray-50 rounded-xl shadow p-6 text-center opacity-0 transform -translate-x-52 transition-all duration-1000 ease-out"
+              x-intersect.once="$el.classList.add('opacity-100', 'translate-x-0')"
+            >
+              <img src="story4.png" alt="Happy Christian using DocuNova" class="rounded-lg mb-6 w-full max-w-md mx-auto">
+              <p class="text-base text-gray-700">
+                Then came the breakthrough. With intelligent document processing, files were auto-tagged, renamed, and neatly filed. Christian could finally find anything in seconds—and get back to what really matters.
+              </p>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-10">Key Features</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-6 bg-white rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">OCR</h3>
+            <p>Extract text from scanned PDFs using Azure Document Intelligence.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">Metadata Extraction</h3>
+            <p>Automatically identify document types, dates, and key details using OpenAI.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">PDF Conversion</h3>
+            <p>Convert Word, image, and email attachments to PDF using Gotenberg.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">Multi-Destination</h3>
+            <p>Send files to Dropbox, Nextcloud, S3, Paperless NGX, WebDAV, Google Drive, OneDrive, and more.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">IMAP Inbox Polling</h3>
+            <p>Pull documents from email inboxes automatically.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">Fully Self-Hosted</h3>
+            <p>Run everything on your own server using Docker, Redis, Celery, and FastAPI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-4xl font-bold mb-16">Your Document Pipeline</h2>
+      
+          <!-- Step 1: Ingestion -->
+          <div class="mb-24">
+            <h3 class="text-2xl font-semibold text-blue-700 mb-4">Document Ingestion</h3>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">
+              Your documents enter the system through a variety of inputs—from scanners to inboxes and drop folders.
+              DocuNova watches them all and picks up everything you throw at it.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/scanner.png" alt="Scanner Upload" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Upload from scanners with ADF or direct scan-to-folder support.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/gmail.png" alt="Gmail" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Connect Gmail inboxes and pull attachments using IMAP.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/mailin.png" alt="Generic IMAP" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Monitor any generic IMAP/POP3 mailbox for incoming documents.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/upload.png" alt="FTP Upload" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Upload files directly via web interface.</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Step 2: Processing -->
+          <div class="mb-24">
+            <h3 class="text-2xl font-semibold text-purple-700 mb-4">Automated Document Processing</h3>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">
+              Inside the DocuNova engine, your documents are transformed into structured data: OCR, metadata extraction, clean naming, and full-text indexing happen automatically.
+            </p>
+            <div class="bg-gray-100 rounded-xl p-6 shadow-lg">
+              <img src="workflow/processing.png" alt="Document Processing" class="mx-auto max-w-md sm:max-w-lg md:max-w-xl h-auto rounded-lg mb-6">
+              <ul class="text-left text-gray-700 text-base max-w-2xl mx-auto space-y-2 px-4">
+                <li>✓ PDF conversion via <strong>Gotenberg</strong></li>
+                <li>✓ OCR with <strong>Azure Document Intelligence</strong></li>
+                <li>✓ Metadata & date extraction via <strong>OpenAI</strong></li>
+                <li>✓ Summary generation, classification & consistent file naming</li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Step 3: Distribution -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-semibold text-teal-700 mb-4">Distribution & Export</h3>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">
+              Once processed, documents are sent where they belong—your favorite cloud, local archive, document management system, or inbox.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/dropbox.png" alt="Dropbox" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Instantly sync to Dropbox for personal or team use.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/nextcloud.png" alt="Nextcloud" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Push to your own Nextcloud instance with tags.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/paperless.png" alt="Paperless NGX" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Hand off structured files to Paperless NGX for archiving.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/onedrive.png" alt="OneDrive" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Export to Microsoft OneDrive for office integration.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/googledrive.png" alt="Google Drive" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Route into folders in Google Drive automatically.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/s3.png" alt="Amazon S3" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Archive in Amazon S3 or MinIO with bucket rules.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/email.png" alt="Email Forwarding" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Send documents via email—great for approval loops or handoffs.</p>
+              </div>
+              <div class="bg-gray-100 rounded-xl p-4 shadow">
+                <img src="workflow/ftp.png" alt="FTP/SFTP" class="w-full h-auto rounded-lg mb-4">
+                <p class="text-sm text-gray-600">Use FTP and SFTP for automated file delivery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+
+     
+
+
+
+    <!-- Who Is It For Section -->
+    <section id="who" class="py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-10">Who Is It For?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-6 bg-white rounded-xl shadow text-center">
+            <h3 class="text-xl font-semibold text-purple-700 mb-2">Data Hoarders</h3>
+            <p>Index and enrich your 10,000+ PDFs automatically. No more chaotic archives.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow text-center">
+            <h3 class="text-xl font-semibold text-purple-700 mb-2">Zero-Paper Enthusiasts</h3>
+            <p>Turn your household into a paperless fortress. DocuNova is your digital vault.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow text-center">
+            <h3 class="text-xl font-semibold text-purple-700 mb-2">Tech-Savvy People</h3>
+            <p>Docker, API, IMAP, AI — if you know the stack, DocuNova puts you in control.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-16 text-center">
+        <a href="#" class="inline-block bg-purple-700 text-white px-6 py-3 rounded-lg shadow hover:bg-purple-800 transition">Back to Top</a>
+      </div>
+    </div>
+    </section>
+
+    <!-- Integration Logos -->
+    <section class="py-16 px-6 bg-gray-100">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-2xl font-semibold mb-6">Built With</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="https://gotenberg.dev/" target="_blank" rel="noopener noreferrer"><img src="logos/gotenberg.png" class="h-8" alt="Gotenberg" /></a>
+          <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer"><img src="logos/fastapi.svg" class="h-8" alt="FastAPI" /></a>
+          <a href="https://redis.io/" target="_blank" rel="noopener noreferrer"><img src="logos/redis.svg" class="h-8" alt="Redis" /></a>
+          <a href="https://docs.celeryq.dev/" target="_blank" rel="noopener noreferrer"><img src="logos/celery.png" class="h-8" alt="Celery" /></a>
+          <a href="https://goauthentik.io/" target="_blank" rel="noopener noreferrer"><img src="logos/authentik.svg" class="h-8" alt="Authentik" /></a>
+          <a href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer"><img src="logos/sqlite.svg" class="h-8" alt="SQLite" /></a>
+          <a href="https://openai.com/" target="_blank" rel="noopener noreferrer"><img src="logos/openai.svg" class="h-8" alt="OpenAI" /></a>
+          <a href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence" target="_blank" rel="noopener noreferrer"><img src="logos/azure.svg" class="h-8" alt="Azure Document Intelligence" /></a>
+          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"><img src="logos/tailwind.svg" class="h-8" alt="Tailwind CSS" /></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer & Imprint -->
+    <footer class="py-6 text-center text-gray-500 text-sm">
+      &copy; 2025 Christian Krakau-Louis. Built with ❤️ for digital organization.
+      <br />
+      <button @click="showImprint = true" class="text-blue-600 hover:underline">Impressum</button>
+    </footer>
+
+    <!-- Impressum Modal -->
+    <div x-show="showImprint" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+      <div @click.away="showImprint = false" class="bg-white rounded-lg shadow-lg p-6 max-w-xl w-full text-left text-sm">
+        <h2 class="text-2xl font-bold mb-4">Impressum</h2>
+        <p><strong>Angaben gemäß § 5 TMG</strong></p>
+        <p class="mt-2">
+          Christian Louis IT Beratung<br />
+          Alter Steinweg 3<br />
+          20459 Hamburg<br />
+          Deutschland
+        </p>
+        <p class="mt-4"><strong>Vertreten durch:</strong><br />Christian Krakau-Louis</p>
+        <p class="mt-4"><strong>Kontakt</strong><br />
+          Fax: +49 40 97074609<br />
+          E-Mail: <a href="mailto:christianlouis@gmail.com" class="text-blue-600 hover:underline">christianlouis@gmail.com</a>
+        </p>
+        <p class="mt-4"><strong>Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:</strong><br />
+          DE202899017
+        </p>
+        <p class="mt-4 text-xs text-gray-500">
+          Dieses Projekt ist Teil einer Open-Source-Initiative. Alle Rechte vorbehalten.
+        </p>
+        <button @click="showImprint = false" class="mt-6 text-blue-700 font-bold hover:underline">Schließen</button>
+      </div>
+    </div>
+  </body>
+</html>
