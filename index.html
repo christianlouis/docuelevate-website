@@ -219,7 +219,7 @@
       </section>
       
     <!-- Who Is It For Section -->
-    <section id="who" class="py-20 px-6" aria-labelledby="who-heading"></section>
+    <section id="who" class="py-20 px-6" aria-labelledby="who-heading">
       <div class="max-w-6xl mx-auto">
         <h2 id="who-heading" class="text-3xl font-bold text-center mb-10">Who Is It For?</h2>
         <div class="grid md:grid-cols-3 gap-8">
@@ -240,7 +240,6 @@
       <div class="mt-16 text-center">
         <a href="#" class="inline-block bg-purple-700 text-white px-6 py-3 rounded-lg shadow hover:bg-purple-800 transition" aria-label="Back to top of page">Back to Top</a>
       </div>
-    </div>
     </section>
 
     <!-- Integration Logos -->
@@ -262,14 +261,14 @@
     </section>
 
     <!-- Footer & Imprint -->
-    <footer class="py-6 text-center text-gray-500 text-sm"></footer>
+    <footer class="py-6 text-center text-gray-500 text-sm">
       &copy; 2025 Christian Krakau-Louis. Built with ❤️ for digital organization.
       <br />
       <button @click="showImprint = true" class="text-blue-600 hover:underline" aria-haspopup="dialog" aria-expanded="false">Impressum</button>
     </footer>
 
     <!-- Impressum Modal -->
-    <div x-show="showImprint" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="impressum-title"></div>
+    <div x-show="showImprint" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="impressum-title">
       <div @click.away="showImprint = false" class="bg-white rounded-lg shadow-lg p-6 max-w-xl w-full text-left text-sm">
         <h2 id="impressum-title" class="text-2xl font-bold mb-4">Impressum</h2>
         <p><strong>Angaben gemäß § 5 TMG</strong></p>
