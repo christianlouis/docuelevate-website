@@ -8,28 +8,33 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.14.9/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <link rel="icon" href="/favicon.ico" />
+    <!-- Add meta description for screen readers -->
+    <meta name="description" content="DocuElevate - Intelligent Document Processing and Management system for organizing and centralizing files to go paperless." />
   </head>
   <body class="bg-white text-gray-900" x-data="{ showImprint: false }">
+    <!-- Add skip to main content link for keyboard users -->
+    <a href="#story" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-purple-700 text-white px-4 py-2 z-50">Skip to main content</a>
+
     <!-- Navigation -->
     <header class="flex items-center justify-between px-6 py-4 shadow">
       <div class="flex items-center space-x-2">
         <img src="logo.svg" alt="DocuElevate Logo" class="w-10 h-10" />
         <span class="text-2xl font-bold text-blue-700">DocuElevate</span>
       </div>
-      <nav class="space-x-6">
+      <nav class="space-x-6" aria-label="Main Navigation">
         <a href="#features" class="text-gray-600 hover:text-purple-700">Features</a>
         <a href="#workflow" class="text-gray-600 hover:text-purple-700">Workflow</a>
         <a href="#story" class="text-gray-600 hover:text-purple-700">Story</a>
         <a href="#who" class="text-gray-600 hover:text-purple-700">Who Is It For?</a>
-        <a href="#imprint" class="text-gray-600 hover:text-purple-700" @click.prevent="showImprint = true">Impressum</a>
-        <a href="https://github.com/christianlouis/DocuElevate" target="_blank" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800">View on GitHub</a>
+        <a href="#imprint" class="text-gray-600 hover:text-purple-700" @click.prevent="showImprint = true" aria-haspopup="dialog">Impressum</a>
+        <a href="https://github.com/christianlouis/DocuElevate" target="_blank" rel="noopener" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800">View on GitHub</a>
       </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="text-center py-20 px-6 bg-gradient-to-r from-blue-700 to-purple-700 text-white">
+    <section class="text-center py-20 px-6 bg-gradient-to-r from-blue-700 to-purple-700 text-white" aria-labelledby="hero-heading">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-5xl font-extrabold mb-4">Intelligent Document Processing & Management</h1>
+        <h1 id="hero-heading" class="text-5xl font-extrabold mb-4">Intelligent Document Processing & Management</h1>
         <p class="text-xl mb-6">
           Simplify your document workflow. Organize and centralize your files and effortlessly go paperless.
         </p>
@@ -37,9 +42,9 @@
       </div>
     </section>
 
-    <section id="story" class="py-20 px-6 bg-white">
+    <section id="story" class="py-20 px-6 bg-white" aria-labelledby="story-heading">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-center mb-12">Christian’s Journey</h2>
+          <h2 id="story-heading" class="text-3xl font-bold text-center mb-12">Christian’s Journey</h2>
       
           <div class="space-y-24 md:grid md:grid-cols-2 md:gap-6 md:space-y-0 transition-all duration-700" x-data="{}">
       
@@ -47,7 +52,7 @@
               class="bg-gray-50 rounded-xl shadow p-6 text-center opacity-0 transform translate-x-52 transition-all duration-1000 ease-out"
               x-intersect.once="$el.classList.add('opacity-100', 'translate-x-0')"
             >
-              <img src="story1.jpg" alt="Christian scanning documents" class="rounded-lg mb-6 w-full max-w-md mx-auto">
+              <img src="story1.jpg" alt="Christian scanning documents with a home scanner" class="rounded-lg mb-6 w-full max-w-md mx-auto">
               <p class="text-base text-gray-700">
                 Christian always believed in staying organized. Long before cloud storage and paperless offices became trendy, he had developed a meticulous routine: every invoice, receipt, and letter was scanned and saved as <code>scan-YYYYMMDDHHMMSS.pdf</code>.
               </p>
@@ -89,9 +94,9 @@
 
 
     <!-- Features Section -->
-    <section id="features" class="py-20 px-6 bg-gray-50">
+    <section id="features" class="py-20 px-6 bg-gray-50" aria-labelledby="features-heading">
       <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-10">Key Features</h2>
+        <h2 id="features-heading" class="text-3xl font-bold mb-10">Key Features</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="p-6 bg-white rounded-xl shadow">
             <h3 class="text-xl font-semibold mb-2 text-blue-700">OCR</h3>
@@ -121,9 +126,9 @@
       </div>
     </section>
 
-    <section id="workflow" class="py-24 px-6 bg-white">
+    <section id="workflow" class="py-24 px-6 bg-white" aria-labelledby="workflow-heading">
         <div class="max-w-6xl mx-auto text-center">
-          <h2 class="text-4xl font-bold mb-16">Your Document Pipeline</h2>
+          <h2 id="workflow-heading" class="text-4xl font-bold mb-16">Your Document Pipeline</h2>
       
           <!-- Step 1: Ingestion -->
           <div class="mb-24">
@@ -134,7 +139,7 @@
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               <div class="bg-gray-100 rounded-xl p-4 shadow">
-                <img src="workflow/scanner.jpg" alt="Scanner Upload" class="w-full h-auto rounded-lg mb-4">
+                <img src="workflow/scanner.jpg" alt="Scanner device connected to computer for document upload" class="w-full h-auto rounded-lg mb-4">
                 <p class="text-sm text-gray-600">Upload from scanners with ADF or direct scan-to-folder support.</p>
               </div>
               <div class="bg-gray-100 rounded-xl p-4 shadow">
@@ -213,17 +218,10 @@
         </div>
       </section>
       
-      
-
-
-     
-
-
-
     <!-- Who Is It For Section -->
-    <section id="who" class="py-20 px-6">
+    <section id="who" class="py-20 px-6" aria-labelledby="who-heading"></section>
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-10">Who Is It For?</h2>
+        <h2 id="who-heading" class="text-3xl font-bold text-center mb-10">Who Is It For?</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="p-6 bg-white rounded-xl shadow text-center">
             <h3 class="text-xl font-semibold text-purple-700 mb-2">Data Hoarders</h3>
@@ -240,40 +238,40 @@
         </div>
       </div>
       <div class="mt-16 text-center">
-        <a href="#" class="inline-block bg-purple-700 text-white px-6 py-3 rounded-lg shadow hover:bg-purple-800 transition">Back to Top</a>
+        <a href="#" class="inline-block bg-purple-700 text-white px-6 py-3 rounded-lg shadow hover:bg-purple-800 transition" aria-label="Back to top of page">Back to Top</a>
       </div>
     </div>
     </section>
 
     <!-- Integration Logos -->
-    <section class="py-16 px-6 bg-gray-100">
+    <section class="py-16 px-6 bg-gray-100" aria-label="Technologies used">
       <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-2xl font-semibold mb-6">Built With</h2>
         <div class="flex flex-wrap justify-center gap-6">
-          <a href="https://gotenberg.dev/" target="_blank" rel="noopener noreferrer"><img src="logos/gotenberg.png" class="h-8" alt="Gotenberg" /></a>
-          <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer"><img src="logos/fastapi.svg" class="h-8" alt="FastAPI" /></a>
-          <a href="https://redis.io/" target="_blank" rel="noopener noreferrer"><img src="logos/redis.svg" class="h-8" alt="Redis" /></a>
-          <a href="https://docs.celeryq.dev/" target="_blank" rel="noopener noreferrer"><img src="logos/celery.png" class="h-8" alt="Celery" /></a>
-          <a href="https://goauthentik.io/" target="_blank" rel="noopener noreferrer"><img src="logos/authentik.svg" class="h-8" alt="Authentik" /></a>
-          <a href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer"><img src="logos/sqlite.svg" class="h-8" alt="SQLite" /></a>
-          <a href="https://openai.com/" target="_blank" rel="noopener noreferrer"><img src="logos/openai.svg" class="h-8" alt="OpenAI" /></a>
-          <a href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence" target="_blank" rel="noopener noreferrer"><img src="logos/azure.svg" class="h-8" alt="Azure Document Intelligence" /></a>
-          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"><img src="logos/tailwind.svg" class="h-8" alt="Tailwind CSS" /></a>
+          <a href="https://gotenberg.dev/" target="_blank" rel="noopener" aria-label="Gotenberg - Opens in a new window"><img src="logos/gotenberg.png" class="h-8" alt="Gotenberg logo" /></a>
+          <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener" aria-label="FastAPI - Opens in a new window"><img src="logos/fastapi.svg" class="h-8" alt="FastAPI logo" /></a>
+          <a href="https://redis.io/" target="_blank" rel="noopener" aria-label="Redis - Opens in a new window"><img src="logos/redis.svg" class="h-8" alt="Redis logo" /></a>
+          <a href="https://docs.celeryq.dev/" target="_blank" rel="noopener" aria-label="Celery - Opens in a new window"><img src="logos/celery.png" class="h-8" alt="Celery logo" /></a>
+          <a href="https://goauthentik.io/" target="_blank" rel="noopener" aria-label="Authentik - Opens in a new window"><img src="logos/authentik.svg" class="h-8" alt="Authentik logo" /></a>
+          <a href="https://www.sqlite.org/" target="_blank" rel="noopener" aria-label="SQLite - Opens in a new window"><img src="logos/sqlite.svg" class="h-8" alt="SQLite logo" /></a>
+          <a href="https://openai.com/" target="_blank" rel="noopener" aria-label="OpenAI - Opens in a new window"><img src="logos/openai.svg" class="h-8" alt="OpenAI logo" /></a>
+          <a href="https://azure.microsoft.com/en-us/products/ai-services/ai-document-intelligence" target="_blank" rel="noopener" aria-label="Azure Document Intelligence - Opens in a new window"><img src="logos/azure.svg" class="h-8" alt="Azure Document Intelligence logo" /></a>
+          <a href="https://tailwindcss.com/" target="_blank" rel="noopener" aria-label="Tailwind CSS - Opens in a new window"><img src="logos/tailwind.svg" class="h-8" alt="Tailwind CSS logo" /></a>
         </div>
       </div>
     </section>
 
     <!-- Footer & Imprint -->
-    <footer class="py-6 text-center text-gray-500 text-sm">
+    <footer class="py-6 text-center text-gray-500 text-sm"></footer>
       &copy; 2025 Christian Krakau-Louis. Built with ❤️ for digital organization.
       <br />
-      <button @click="showImprint = true" class="text-blue-600 hover:underline">Impressum</button>
+      <button @click="showImprint = true" class="text-blue-600 hover:underline" aria-haspopup="dialog" aria-expanded="false">Impressum</button>
     </footer>
 
     <!-- Impressum Modal -->
-    <div x-show="showImprint" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+    <div x-show="showImprint" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="impressum-title"></div>
       <div @click.away="showImprint = false" class="bg-white rounded-lg shadow-lg p-6 max-w-xl w-full text-left text-sm">
-        <h2 class="text-2xl font-bold mb-4">Impressum</h2>
+        <h2 id="impressum-title" class="text-2xl font-bold mb-4">Impressum</h2>
         <p><strong>Angaben gemäß § 5 TMG</strong></p>
         <p class="mt-2">
           Christian Louis IT Beratung<br />
@@ -292,8 +290,25 @@
         <p class="mt-4 text-xs text-gray-500">
           Dieses Projekt ist Teil einer Open-Source-Initiative. Alle Rechte vorbehalten.
         </p>
-        <button @click="showImprint = false" class="mt-6 text-blue-700 font-bold hover:underline">Schließen</button>
+        <button @click="showImprint = false" class="mt-6 text-blue-700 font-bold hover:underline" aria-label="Close impressum dialog">Schließen</button>
       </div>
     </div>
+
+    <!-- Add keyboard trap navigation for modal -->
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('keyboardTrap', () => ({
+          init() {
+            this.$watch('showImprint', value => {
+              if (value) {
+                this.$nextTick(() => {
+                  this.$refs.closeButton.focus()
+                })
+              }
+            })
+          }
+        }))
+      })
+    </script>
   </body>
 </html>
