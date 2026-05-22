@@ -8,8 +8,12 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.14.9/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <link rel="icon" href="/favicon.ico" />
-    <!-- Add meta description for screen readers -->
     <meta name="description" content="DocuElevate - Intelligent Document Processing and Management system for organizing and centralizing files to go paperless." />
+    <meta property="og:title" content="DocuElevate" />
+    <meta property="og:description" content="Intelligent document processing, OCR, metadata extraction, and document routing for self-hosted paperless workflows." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.docuelevate.org/" />
+    <link rel="canonical" href="https://www.docuelevate.org/" />
   </head>
   <body class="bg-white text-gray-900" x-data="{ showImprint: false }">
     <!-- Add skip to main content link for keyboard users -->
@@ -27,6 +31,7 @@
         <a href="#story" class="text-gray-600 hover:text-purple-700">Story</a>
         <a href="#who" class="text-gray-600 hover:text-purple-700">Who Is It For?</a>
         <a href="#imprint" class="text-gray-600 hover:text-purple-700" @click.prevent="showImprint = true" aria-haspopup="dialog">Impressum</a>
+        <a href="https://app.docuelevate.org/" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Open App</a>
         <a href="https://github.com/christianlouis/DocuElevate" target="_blank" rel="noopener" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800">View on GitHub</a>
       </nav>
     </header>
@@ -37,6 +42,9 @@
         <h1 id="hero-heading" class="text-5xl font-extrabold mb-4">Intelligent Document Processing & Management</h1>
         <p class="text-xl mb-6">
           Simplify your document workflow. Organize and centralize your files and effortlessly go paperless.
+        </p>
+        <p class="mb-8">
+          <a href="https://app.docuelevate.org/" class="inline-block bg-white text-blue-700 font-semibold px-5 py-3 rounded hover:bg-gray-100">Open production instance</a>
         </p>
         <img src="hero.jpg" alt="Hero Illustration" class="mx-auto rounded-xl shadow-lg w-full max-w-3xl" />
       </div>
