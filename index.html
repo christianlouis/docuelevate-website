@@ -30,6 +30,8 @@
         <a href="#workflow" class="text-gray-600 hover:text-purple-700">Workflow</a>
         <a href="#story" class="text-gray-600 hover:text-purple-700">Story</a>
         <a href="#who" class="text-gray-600 hover:text-purple-700">Who Is It For?</a>
+        <a href="privacy.html" class="text-gray-600 hover:text-purple-700">Privacy</a>
+        <a href="support.html" class="text-gray-600 hover:text-purple-700">Support</a>
         <a href="#imprint" class="text-gray-600 hover:text-purple-700" @click.prevent="showImprint = true" aria-haspopup="dialog">Impressum</a>
         <a href="https://app.docuelevate.org/" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Open App</a>
         <a href="https://github.com/christianlouis/DocuElevate" target="_blank" rel="noopener" class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800">View on GitHub</a>
@@ -109,6 +111,14 @@
           <div class="p-6 bg-white rounded-xl shadow">
             <h3 class="text-xl font-semibold mb-2 text-blue-700">OCR</h3>
             <p>Extract text from scanned PDFs using Azure Document Intelligence.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">Cloud connections</h3>
+            <p>Connect Google Drive, Dropbox, OneDrive, Nextcloud, S3 and WebDAV with permissions you choose. The app requests access only when you start a connection.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">Apple roadmap</h3>
+            <p>Sign in with Apple and selecting iCloud files from the mobile app are planned and not yet available.</p>
           </div>
           <div class="p-6 bg-white rounded-xl shadow">
             <h3 class="text-xl font-semibold mb-2 text-blue-700">Metadata Extraction</h3>
@@ -272,6 +282,10 @@
     <footer class="py-6 text-center text-gray-500 text-sm">
       &copy; 2025 Christian Krakau-Louis. Built with ❤️ for digital organization.
       <br />
+      <a href="privacy.html" class="text-blue-600 hover:underline mr-3">Privacy</a>
+      <a href="terms.html" class="text-blue-600 hover:underline mr-3">Terms</a>
+      <a href="support.html" class="text-blue-600 hover:underline mr-3">Support</a>
+      <a href="account-deletion.html" class="text-blue-600 hover:underline mr-3">Account deletion</a>
       <button @click="showImprint = true" class="text-blue-600 hover:underline" aria-haspopup="dialog" aria-expanded="false">Impressum</button>
     </footer>
 
